@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+input, select {
+    margin: 10px;
+    padding: 5px;
+}
+
+
+    </style>
+</head>
+
+<body>
+        <div class="calculator">
+            <input type="text" id="box_gauche">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" id="box_droite">
+            <input type="submit" value="Try me!" id="calculateButton">
+        </div>
+    
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const calculateButton = document.getElementById('calculateButton');
+
+    function showAlert(message) {
+        alert(message);
+        console.log(message);
+    }
+
+    function calculate() {
+        const box_gauche = parseInt(document.getElementById('box_gauche').value);
+        const box_droite = parseInt(document.getElementById('box_droite').value);
+        const operator = document.getElementById('operator').value;
+        let result;
+
+        if (isNaN(box_gauche) || isNaN(box_droite) || box_gauche < 0 || box_droite < 0) {
+            showAlert('Error :(');
+            return;
+        }
+
+        switch (operator) {
+            case '+':
+                result = box_gauche + box_droite;
+                break;
+            case '-':
+                result = box_gauche - box_droite;
+                break;
+            case '*':
+                result = box_gauche * box_droite;
+                break;
+            case '/':
+                if (box_droite === 0) {
+                    showAlert("It's over 9000!");
+                    return;
+                }
+                result = box_gauche / box_droite;
+                break;
+            case '%':
+                if (box_droite === 0) {
+                    showAlert("It's over 9000!");
+                    return;
+                }
+                result = box_gauche % box_droite;
+                break;
+            default:
+                showAlert('Invalid operator :(');
+                return;
+        }
+
+        showAlert('Résultat : ' + result);
+    }
+
+    calculateButton.addEventListener('click', calculate);
+
+    // Afficher un message d'alerte toutes les 30 secondes
+    setInterval(function() {
+        showAlert('Please, use me');
+    }, 30000);
+});
+
+
+</script>
+    </body>
+    </html>
+   

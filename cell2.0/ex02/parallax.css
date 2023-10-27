@@ -1,0 +1,50 @@
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .image1 {
+    background-image: url("backgroung.jpg");
+    padding: 40px;
+  }
+  
+  .rectangle {
+    background-color: black;
+    height: 20vh;
+    padding: 50px;
+  }
+
+  .image2 {
+    background-image: url("Modi.jpg");
+    padding: 40px;
+  }
+  
+  .p1 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    display: grid;
+    place-items: center;
+    height: 1300px;
+  }
+
+  .p2 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    display: grid;
+    place-items: center;
+    height: 200px;
+  }
+
+  .p3 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    display: grid;
+    place-items: center;
+    height: 1300px;
+  }
